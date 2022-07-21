@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <title>Contrrolar</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <!-- Template css Files -->
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+  <!-- <link rel="stylesheet" href="css/skins/pink.css" type="text/css"> -->
+</head>
+<body>
+
+    <!-- MAIN CONTAINER -->
+    <div class="menu-lateral">
+        <!-- LATERAL-->
+        <div class="lateral">
+            <!-- LOGO-->
+            <div class="perfil">
+                <a href="#">
+                    <img src="img/logo.png" alt="foto-perfil" class="sombra">
+                </a>
+            </div>
+            <!-- MINI-MENU -->
+            <div class="mini-menu-button">
+                <span></span>
+            </div>
+
+            <!--Itens navegação-->
+            <ul class="itens-menu">  
+                <li><a href="#home" class="active"><i class="fa fa-home"></i> Perfil </a></li>
+                <li><a href="#resgPressao"><i class="fa fa-stethoscope"></i> Registro Pressão </a></li>
+                <li><a href="#resgGlicemia"><i class="fa fa-heartbeat"></i> Registro Glicemia  </a></li>
+                <li><a href="#relatorio"><i class="fa fa-pie-chart"></i> Relatório </a></li>
+
+                <li><a href="#salafamilia"><i class="fa fa-users"></i> Familia </a></li>
+                <!--<li><a href="#contato"><i class="fa fa-comments"></i> Contato</a></li>-->
+            </ul>
+        </div>
+
+        <!-- CONTEUDO  MEIO DAS PÁGINAS-->
+        <div class="main-content">
+            <!--PAGINA HOME-->
+            <section class="home section active" id="home">
+                <div class="container">
+                    <div class="intro">
+                        <img src="" alt="">
+                        <h1> Em Desenvolvimento  </h1>
+                        <img src="img/desenvolvendo.gif" alt="foto-perfil" class="sombra">
+
+                        <p></p> </p>
+                        
+                    </div>
+                </div>
+            </section>
+            <!--FIM HOME-->
+
+            <!-- PAGINA REGISTRO PRESSAO -->
+            <section class="resgPressao section" id="resgPressao">
+                <div class="container">
+                    <div class="linhas">
+                        <div class="section-title padd-15">
+                            <h2>Resgistro Pressão Arterial </h2>
+                        </div>
+                    </div>
+                    <div class="linhas">
+                        <div class="resgPressao-conteudo padd-15">
+                            <div class="linhas">
+                                <div class="resgPressao-texto padd-15">
+                                    
+                                    <p> Insira o valor de sua pressão arterial conforme solicitado </p>
+                                </div>
+                            </div>
+
+                           
+                                <p class="lista-conhecimentos-titulo">  </p>
+                                <div class="lista-conhecimentos--menor">
+                                    <div class="lista-conhecimentos-item">
+                                        
+                                        
+                                        <p for="valorPressao">Valor Pressão </p>
+                                        
+                                            <input type="text" id="valorPressao" name="valorPressao" placeholder="Ex: 120.60 " >
+                                        
+                                    </div>
+
+                                </div>
+                                    
+                                <!--BOTÕES-->
+                                <div class="linhas">
+                                    <div class="buttons padd-15">
+                                        <a id="botaoCalcular" target="_blank" class="btn"> Verificar </a>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <!--Fim-Skills-->                                                                                                               
+                        </div>
+                    </div>     
+                </div>
+            </section>
+            <!-- FIM REGISTRO PRESSAO -->
+
+            <!--REGISTRO GLICEMIA -->
+            <section class="resgGlicemia section" id="resgGlicemia">
+                <div class="container">
+                    <div class="linhas">
+                        <div class="section-title padd-15">
+                            <h2>Resgistro Glicemia </h2>
+                        </div>
+                    </div>
+                    <div class="linhas">
+                        <div class="resgGlicemia-conteudo padd-15">
+                         
+                            <!--Fica no canto esquerdo-->
+                            <div class="linhas">
+                                <div class="resgGlicemia-texto padd-15">
+                                    
+                                    <p> Insira o valor de sua glicemia conforme solicitado </p>                                   
+                                </div>
+                            </div>
+
+                                <!-- fica no meio da pagina -->
+                                <p class="lista-conhecimentos-titulo">  </p>
+                                <div class="lista-conhecimentos--menor">
+                                    <div class="lista-conhecimentos-item">
+                                        <p for="resgGlicemia"> Você está em jejum? </p>
+                                        <select id="jejum">
+                                            <option value="nulo">Selecione</option>
+                                            <option id="jejumSim" value="1">Sim, estou em jejum. </option>
+                                            <option id="jejumnao" value="2">Não, eu já comi hoje. </option>
+                                            
+                                        </select>   
+                                        <p> </p>
+                                        <p for="resgGlicemia"> Valor Glicemia </p>
+                                                <input type="number" id="valorGlicemia" min="0" placeholder="Valor Glicemia ">
+
+                                    </div>
+                                </div>
+                                    
+                                <!--BOTÕES-->
+                                <div class="linhas">
+                                    <div class="buttons padd-15">
+                                        <a id="botaoCalcularGlicemia" target="_blank" class="btn"> Verificar </a>
+                                        
+                                    </div>
+                                </div>
+                            
+                            </div>
+
+                            
+                    </div>
+                </div>
+            </section>
+            <!--FIM - glicemia-->
+<!--RELATORIO -->
+            <section class="salafamilia section" id="salafamilia">
+                <div class="container">
+                    <div class="linhas">
+                        <div class="section-title padd-15">
+                            <h2> Relatório  </h2>
+                            <h1> Em Desenvolvimento  </h1>
+                            <img src="img/desenvolvendo.gif" alt="foto-perfil" class="sombra">
+                        </div>
+                    </div>
+                    <div class="linhas">
+                        <div class="salafamilia-conteudo padd-15">
+                            <div class="linhas">
+                                <div class="salafamilia-texto padd-15">
+                                    
+                                    <p>  </p>
+                                </div>
+                            </div>
+
+            <!--sala familia -->
+            <section class="salafamilia section" id="salafamilia">
+                <div class="container">
+                    <div class="linhas">
+                        <div class="section-title padd-15">
+                            <h2>Sala familia  </h2>
+                            <h1> Em Desenvolvimento  </h1>
+                            <img src="img/desenvolvendo.gif" alt="foto-perfil" class="sombra">
+                        </div>
+                    </div>
+                    <div class="linhas">
+                        <div class="salafamilia-conteudo padd-15">
+                            <div class="linhas">
+                                <div class="salafamilia-texto padd-15">
+                                    
+                                    <p>  </p>
+                                </div>
+                            </div>
+
+                           
+                                
+            <!-- FIM - PORTFOLIO-->
+
+          
+        </div>
+    </div>
+
+      <!--Add js-->
+  <script src="js/scripts.js"></script>
+
+</body>
+</html>

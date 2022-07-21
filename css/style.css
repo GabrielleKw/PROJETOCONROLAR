@@ -1,0 +1,547 @@
+/*IMPORTANDO ICONES - Font Awesome Free Icon*/
+@import url("https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+@import url('<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">');
+@import url('<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">');
+
+/* VARIAVÉIS DE COR*/
+:root {
+  --color-blue: BLUE;
+  --color-text: black;
+  --color-title: black;
+  --color-grey: black;
+  --color-border: rgb(4, 2, 2) ; /* BORDA DOS QUADRADOS*/
+}
+
+/*Geral*/
+body {
+  margin: 0;
+  line-height: 1.5;
+  font-size: 16px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  background: white;
+}
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+input,
+textarea,
+select {
+  font-family: "Open Sans", sans-serif;
+}
+/*pagina onde trabalhoo*/
+.section {
+  background-color: white;
+  min-height: 100vh;
+  display: block;
+  padding: 0 30px;
+  position: fixed;
+  left: 270px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  /*Permitir a barra de rolagem*/
+  overflow-x: hidden;
+  overflow-y: auto;
+  opacity: 1;
+
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+/*Transição das páginas*/
+.section.back-section {
+  z-index: 1;
+}
+
+.section.active {
+  opacity: 1;
+  z-index: 2;
+  -webkit-animation: slideSection 1s ease;
+  animation: slideSection 1s ease;
+}
+
+@-webkit-keyframes slideSection {
+  0% {
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+  }
+  100% {
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);
+  }
+}
+
+@keyframes slideSection {
+  0% {
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+  }
+  100% {
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);
+  }
+}
+/*deixa as letras mais pra baixo ,, não colada nos canto*/
+.section .container {
+  padding-top: 60px;
+  padding-bottom: 70px;
+}
+
+/* titulo qndo acessa a pagina ,primeiro texto no top */
+.section-title h2 {
+  font-size: 40px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 800;
+  color: black;
+  margin: 0;
+  position: relative;
+  margin-bottom: 60px;
+}
+
+/*configurações do meio da home*/
+
+/*deixa os dados da pagina usuario no meio */
+.container {
+  max-width: 1100px;
+  width: 100%;
+  margin: auto;
+}
+
+/*configuração do meu botão */
+.btn {
+  background-color: var(--color-blue);
+  font-family: "Open Sans", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 10px 20px;
+  color: #ffff;
+  border-radius: 40px;
+  display: inline-block;
+  white-space: nowrap;
+  border: none;
+  cursor: pointer;
+
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.hidden {
+  display: none !important;
+}
+/*fim-configurações do meio do home*/
+
+/*lateral*/
+.lateral {
+  width: 370px;
+  background-color: white;
+  position: fixed;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 11;
+  border-right: 1px solid #e8dfec;
+  padding: 30px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+
+  /*Barra lateral do menu*/
+  overflow-y: auto;
+}
+
+.lateral .perfil {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.lateral .perfil img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  border: 2px solid BLUE;
+}
+
+.sombra {
+  -webkit-box-shadown: 0 0 20px rgba(48, 46, 77, 0.15);
+  box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
+}
+
+/* -- MINI MENU BUTTON*/
+.lateral .mini-menu-button {
+  height: 40px;
+  width: 45px;
+  border: 1px solid #d4d4e3;
+  cursor: pointer;
+  position: fixed;
+  left: 300px;
+  top: 20px;
+  z-index: 11;
+  border-radius: 5px;
+  background-color: black;
+
+  display: none;
+  -ms-flex-align: center;
+  -ms-flex-pack: center;
+
+  align-items: center;
+  justify-content: center;
+
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.lateral .mini-menu-button span {
+  height: 2px;
+  width: 18px;
+  display: inline-block;
+  background-color: var(--color-blue);
+  position: relative;
+}
+
+.lateral .mini-menu-button.open span {
+  background-color: transparent;
+}
+
+.lateral .mini-menu-button.open span::before {
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  top: 0px;
+}
+
+.lateral .mini-menu-button span::before {
+  content: "";
+  background-color: var(--color-blue);
+  height: 2px;
+  width: 18px;
+  position: absolute;
+  top: -6px;
+  left: 0;
+}
+
+.lateral .mini-menu-button span::after {
+  content: "";
+  background-color: var(--color-blue);
+  height: 2px;
+  width: 18px;
+  position: absolute;
+  top: 6px;
+  left: 0;
+}
+
+.lateral .mini-menu-button.open span::after {
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  top: 0px;
+}
+
+/*Fim - mini-menu-button*/
+.lateral .itens-menu {
+  list-style: none;
+  margin: 70px 0;
+  padding: 0;
+}
+
+.lateral .itens-menu li {
+  display: block;
+}
+
+.lateral .itens-menu li a {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--color-title);
+  text-decoration: none;
+  line-height: 50px;
+  display: block;
+  border-bottom: 1px solid #e8dfec;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  text-transform: capitalize;
+}
+
+.lateral .itens-menu li a:not(.active):hover {
+  padding-left: 5px;
+  color: var(--color-blue);
+}
+
+.lateral .itens-menu li a.active {
+  color: var(--color-blue);
+}
+
+.lateral .itens-menu li a .fa {
+  margin-right: 10px;
+}
+
+/*HOME*/
+.home {
+  min-height: 100vh;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.home .intro {
+  text-align: center;
+}
+
+.home .intro h1 {
+  font-size: 40px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  color: var(--color-title);
+  margin: 20px 0 5px;
+}
+
+.home .intro p {
+  font-size: 25px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  color: var(--color-text);
+  margin: 0;
+  line-height: 30px;
+}
+
+/*FIM DA HOME*/
+
+/* PAGINA Registro Pressao  */
+.resgPressao .resgPressao-conteudo {
+  -ms-flex: 0 0 100%;
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+.resgPressao .resgPressao-conteudo .resgPressao-texto {
+  -ms-flex: 0 0 100%;
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+.resgPressao .resgPressao-conteudo .resgPressao-texto h3 {
+  font-size: 25px;
+  margin-bottom: 15px;
+  color: var(--color-title);
+  font-weight: 600;
+}
+
+.resgPressao .resgPressao-conteudo .resgPressao-texto p {
+  font-size: 25px;
+  line-height: 25px;
+  color: var(--color-text);
+  margin: 0;
+}
+
+/*deixa o text box no meio da pagina */
+.resgPressao .lista-conhecimentos--menor {
+  max-width: 500px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  padding: 6px 0;
+}
+/* deixa o testo da pergunta valor glicemia negrito*/ 
+.resgPressao .lista-conhecimentos-item p {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+/* Registro Pressão Section */
+  .resgGlicemia .resgGlicemia-conteudo {
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  
+  .resgGlicemia .resgGlicemia-conteudo .resgGlicemia-texto {
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  
+  .resgGlicemia .resgGlicemia-conteudo .resgGlicemia-texto h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: var(--color-title);
+    font-weight: 600;
+  }
+  
+  .resgGlicemia .resgGlicemia-conteudo .resgGlicemia-texto p {
+    font-size: 25px;
+    line-height: 25px;
+    color: var(--color-text);
+    margin: 0;
+  }
+
+/* deixa os dados valor glicemia e se ta em jejum no meio da pagina */
+  .resgGlicemia .lista-conhecimentos--menor {
+    max-width: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    padding: 6px 0;
+  }
+/* formata os texto do item acima */    
+  .resgGlicemia .lista-conhecimentos-item p {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: var(--color-text);
+    font-weight: 600;
+  }
+
+/*salafamilia*/
+
+.salafamilia .salafamilia-item {
+  -ms-flex: 0 0 33.33%;
+  flex: 0 0 33.33%;
+  max-width: 33.33%;
+  margin-bottom: 30px;
+  /*Para deixar todos os cards do mesmo comprimento*/
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+
+/*RESPONSIVIDADE*/
+
+@media (max-width: 1600px) {
+  .lateral {
+    width: 270px;
+  }
+}
+
+@media (max-width: 1199px) {
+  .section .container {
+    padding-top: 70px;
+  }
+
+  .lateral .mini-menu-button {
+    display: -ms-flexbox;
+    display: flex;
+    left: 30px;
+  }
+
+  .lateral .mini-menu-button.open {
+    left: 300px;
+  }
+
+  .lateral {
+    left: -370px;
+  }
+
+  .lateral.open {
+    left: 0px;
+  }
+
+  .section {
+    left: 0;
+  }
+  .section.open {
+    left: 270;
+  }
+
+  .home .intro img {
+    width: 45%;
+    display: inline-block;
+  }
+
+  .lateral .itens-menu li a {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 40px;
+  }
+}
+
+/*MEU LOGIN*/
+html,body {
+	height: 100%;
+}
+*{
+  background: white;
+}
+body.my-login-page {
+	background-color: white;
+	font-size: 14px;
+}
+
+.my-login-page .brand {
+	width: 90px;
+	height: 90px;
+	overflow: hidden;
+	border-radius: 50%;
+	margin: 40px auto;
+	box-shadow: 0 4px 8px rgba(0,0,0,.05);
+	position: relative;
+	z-index: 1;
+}
+
+.my-login-page .brand img {
+	width: 100%;
+}
+
+.my-login-page .card-wrapper {
+	width: 400px;
+}
+
+.my-login-page .card {
+	border-color: transparent;
+	box-shadow: 0 4px 8px rgba(0,0,0,.05);
+
+}
+
+.my-login-page .card.fat {
+	padding: 10px;
+}
+
+.my-login-page .card .card-title {
+	margin-bottom: 30px;
+}
+
+.my-login-page .form-control {
+	border-width: 2.3px;
+}
+
+.my-login-page .form-group label {
+	width: 100%;
+}
+
+.my-login-page .btn.btn-block {
+	padding: 12px 10px;
+}
+
+
+
+@media screen and (max-width: 425px) {
+	.my-login-page .card-wrapper {
+		width: 90%;
+		margin: 0 auto;
+	}
+}
+
+@media screen and (max-width: 320px) {
+	.my-login-page .card.fat {
+		padding: 0;
+	}
+
+	.my-login-page .card.fat .card-body {
+		padding: 15px;
+	}
+}
